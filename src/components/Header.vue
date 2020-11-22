@@ -5,7 +5,7 @@
       :left-arrow="back"
       @click-left="goBack"
     />
-  </div>
+          </div>
 </template>
 <script lang="ts">
 import { Component, Prop, Watch, Vue } from 'vue-property-decorator';

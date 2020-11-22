@@ -18,10 +18,9 @@ class Http {
         this.service.interceptors.response.use((response) => {
             if (response.status === 200) {
                 if (response.data) {
-                    if (response.data.Code === 0) {
+                    if (true) {
                         return Promise.resolve(response.data || true);
                     }
-                    return Promise.reject(response.data || true);
                 }
                 return Promise.resolve(response || false);
             }

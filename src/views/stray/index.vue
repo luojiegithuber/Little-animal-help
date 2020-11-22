@@ -26,9 +26,9 @@ import { fetchPetInfo } from '@/api/home';
 import InfoCollapse from '@/components/InfoCollapse.vue';
 @Component({
   components: {
-    [Search.name]: Search,
-    [Icon.name]: Icon,
-    [Button.name]: Button,
+     [Search.name]: Search,
+    [Icon.name]: Icon, 
+    [Button.name]: Button,  
     InfoCollapse
   },
 })

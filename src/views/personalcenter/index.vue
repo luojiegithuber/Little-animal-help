@@ -8,14 +8,14 @@
           title="个人中心"
           is-link
         />
-        <van-cell icon="gold-coin-o" title-class="title-left" title="我的钱包" is-link />
+        <van-cell icon="gold-coin-o" title-class="title-left" title="我的钱包" is-link />   
         <van-cell icon="gift-o" title-class="title-left" title="活动中心" is-link />
-      </van-cell-group>
-      <van-cell-group>
-        <van-cell icon="records" title-class="title-left" title="问题反馈" is-link />
-      </van-cell-group>
+      </van-cell-group>   
+      <van-cell-group  >
+          <van-cell icon="records" title-class="title-left" title="问题反 馈" is-link/> 
+       </van-cell-group>
     </div>
-</template>
+</template> 
 <script lang="ts">
 import { Component, Prop, Watch, Vue } from 'vue-property-decorator';
 import { Tabbar, TabbarItem } from 'vant';
