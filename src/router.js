@@ -4,6 +4,7 @@ import Home from "@/views/Home.vue";
 import Another from "@/views/another/Another.vue";
 import Stray from "@/views/stray/index.vue";
 import PetDetail from "@/views/PetDetail.vue";
+import Main from "@/views/Main.vue";
 Vue.use(Router);
 
 const originalPush = Router.prototype.push;
@@ -14,9 +15,9 @@ Router.prototype.push = function push(location) {
 export default new Router({
   routes: [
     {
-      path: "/",
-      name: "home",
-      component: Home,
+      path: "/main",
+      name: "main",
+      component: Main,
       meta: {
         title: "首页",
       },
@@ -43,6 +44,14 @@ export default new Router({
       component: PetDetail,
       meta: {
         title: "详情页",
+      },
+    },
+    {
+      path: "/Main",
+      name: "Main",
+      component: Main,
+      meta: {
+        title: "主页",
       },
     },
   ],
