@@ -15,14 +15,6 @@ Router.prototype.push = function push(location) {
 export default new Router({
   routes: [
     {
-      path: "/main",
-      name: "main",
-      component: Main,
-      meta: {
-        title: "首页",
-      },
-    },
-    {
       path: "/another",
       name: "another",
       component: Another,
@@ -47,7 +39,7 @@ export default new Router({
       },
     },
     {
-      path: "/Main",
+      path: "/",
       name: "Main",
       component: Main,
       meta: {

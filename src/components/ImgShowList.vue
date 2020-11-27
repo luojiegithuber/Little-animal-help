@@ -38,20 +38,20 @@ export default class ImgShowList extends Vue {
         this.imglist = [];
 
         this.imglist.push({
-            imgUrl:'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1604700588&di=4d8fe15b1e343e267be7e553f87497d2&src=http://b-ssl.duitang.com/uploads/item/201207/05/20120705160258_SiA4w.thumb.700_0.jpeg',
-            title:'优美的狮子林'
+            imgUrl:'https://s3.ax1x.com/2020/11/27/DrOu5V.jpg',
+            title:'加菲猫'
         })
         this.imglist.push({
-            imgUrl:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604710996164&di=d820f2ca698204b364a0d50a8f3e1b5d&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20181211%2F9570f1f19c7a4c888e01983806d642d7.jpeg',
-            title:'好看的拙政园'
+            imgUrl:'https://s3.ax1x.com/2020/11/27/DrOmEq.jpg',
+            title:'哈士奇'
         })
         this.imglist.push({
-            imgUrl:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604711063796&di=7884ca9501c33dc7fb406c5a58151291&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20180918%2F09ac5c9a04c448c5a2642ab07ec976a3.jpeg',
-            title:'壮观的金鸡湖景区'
+            imgUrl:'https://s3.ax1x.com/2020/11/27/DrOZbn.jpg',
+            title:'柯基'
         })
         this.imglist.push({
-            imgUrl:'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=972057105,1227146932&fm=26&gp=0.jpg',
-            title:'典雅的乌镇'
+            imgUrl:'https://s3.ax1x.com/2020/11/27/DrOnU0.jpg',
+            title:'布偶猫'
         })
 
 
