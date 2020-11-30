@@ -8,6 +8,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { NavBar } from 'vant';
+
 import Header from '@/components/Header.vue';
 import Tabbar from '@/components/Tabbar.vue';
 import '../public/css/icon.css';

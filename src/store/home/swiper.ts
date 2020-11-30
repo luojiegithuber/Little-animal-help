@@ -21,9 +21,9 @@ const actions: any = {
         const res: any = {
             Code: 1,
             List: [
-                {src: require("../../assets/20190705150329.jpg"), name: ''},
-                {src: require("../../assets/20190705150336.jpg"), name: ''},
-                {src: require("../../assets/20190705150320.jpg"), name: ''} ]
+                {src: require("../../assets/中国小动物保护协会.jpg"), name: ''},
+                {src: require("../../assets/苏州小动物保护协会.jpg"), name: ''},
+                {src: require("../../assets/长沙小动物保护协会.jpg"), name: ''} ]
         };
         context.commit('saveSwiperImgs', res.List);
     },

@@ -3,7 +3,7 @@
     <div class="header">
       <swiper :imgs="swiperImgsData"></swiper>
       <div class="identify-button">
-        <van-uploader :after-read="afterRead">
+        <van-uploader :after-read="afterRead" :before-read="beforeRead">
             <van-button icon="scan" type="info" size="large" round style="width:50vw;box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);font-size:1.6em">智能识别</van-button>
         </van-uploader>
       </div>
@@ -13,7 +13,8 @@
         <van-divider
         :style="{ color: 'black', borderColor: 'black', padding: '0 16px'}"
         >
-            <span >探索更多热门</span>
+            <span>探索更多的小动物</span> 
+
         </van-divider>
         <ImgShowList></ImgShowList>
     </div>
@@ -27,10 +28,13 @@ import {
     Button,
     Uploader,
     Divider, 
+    Toast
 } from "vant";
 import ImgShowList from "@/components/ImgShowList.vue";
 import Swiper from "@/components/Swiper.vue";
 import { SwiperType } from "@/interface";
+import { fetchPetImgInfo } from "@/api/home";
+Vue.use(Toast);
 @Component({
   components: {
     [Button.name]: Button,
@@ -43,10 +47,6 @@ import { SwiperType } from "@/interface";
 export default class extends Vue {
     private skeletonShow: boolean = true;
     private swiperImgsData = null;
-
-    private longitude: any = 120.76692200000001;
-    private latitude: any = 31.25;
-
 
 
   @Action("swiperImgs") private actionSwiperImgs;
@@ -75,17 +75,22 @@ export default class extends Vue {
 
   }
 
-
-  async afterRead(file){
-      let param = new FormData() // 创建form对象
-      param.append('file', file.file, file.file.name) // 通过append向form对象添加数据
-      console.log(param.get('file'))
-      console.log('经纬度',this.longitude,this.latitude)
-      const res: any = await this.postImg(param,this.latitude,this.longitude);
-      
+  beforeRead(file) {
+    if (file.type !== 'image/jpeg') {
+      Toast('请上传 jpg 格式图片');
+      return false;
+    }
+    return true;
   }
 
-postImg = (formData, lat1, log1) => {
+  async afterRead(file){
+    console.log('文件',file)
+    const response = await fetchPetImgInfo(file.content)
+    console.log(response.newslist)
+  }
+
+
+/* postImg = (formData, lat1, log1) => {
     const config = {
         headers: {
             'Content-Type': 'multipart/form-data'
@@ -95,12 +100,12 @@ postImg = (formData, lat1, log1) => {
         // console.log(res)
         this.$router.push({path:'/recommendresult',query: {detailData:JSON.stringify(res.data)}})
     })
-};
+}; */
 
 
   mounted() {
     var _this = Vue.prototype;
-
+/* 
     if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
             //locationSuccess 获取成功的话
@@ -116,7 +121,7 @@ postImg = (formData, lat1, log1) => {
                 alert(errorType[error.code - 1]);
             }
         );
-    }
+    } */
   }
 
   public async getPetInfo() {

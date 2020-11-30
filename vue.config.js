@@ -16,7 +16,7 @@ module.exports = {
   devServer: {
     // 配置代理
     open: true, // auto open brower 项目启动后自动打开浏览器...
-    host: "localhost",
+    host: '0.0.0.0',
     port: 8015, // 修改端口号
     proxy: {
       '/tianapi': {

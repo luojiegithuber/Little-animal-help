@@ -39,7 +39,6 @@ export default class DeTail extends Vue {
     private activeNames: Array<string> = ['景区简介',"周边酒店"];
     private infoBaseData: any = [];
     private detailDate: any = [];
-    private coordinate: any = {lng: 116.404, lat: 39.915};
     private hotelList: Array<any> = [
         {
             imgUrl:'https://img.yzcdn.cn/vant/cat.jpeg',
@@ -53,22 +52,25 @@ export default class DeTail extends Vue {
         return `${this.detailDate.countryname}-${this.detailDate.provincename}-${this.detailDate.cityname}-${this.detailDate.countyname}`
     }
 
+
   private infoCollapse: any = {
-    "pettype":1,
-    "name":"哈士奇",
-    "engName":"SiberianHuskiy",
-    "characters":"聪明机灵、极度热情、神经质",
-    "nation":"俄罗斯",
-    "easyOfDisease":"肠胃疾病",
-    "life":"9-15年",
-    "price":"2000-4000元",
-    "desc":"　　西伯利亚",
-    "feature":"　　西伯利亚雪橇犬是一种原始的古老犬种，因它的独特嘶哑的叫声被称之为当今的哈士奇。很早前哈士奇是最原始的交通工具专门拉雪橇的，并用这种狗猎取和饲养驯鹿，或者繁殖这种狗，然后带出他们居住的冻土地，换取温饱。典型狼性犬。",
-    "characterFeature":"　　哈士奇的外表英俊潇洒，精致的五官和丰富的肢体语言充满了奇特的表现，无需复杂的交谈，就能轻易了解他的喜怒哀乐。哈士奇时常会有点神经质。",
-    "careKnowledge":"　　哈士奇虽然看着一副冷漠无情的样子，事实上，哈士奇对人很友好、温柔、热情的。喜欢与人交往是哈士奇的典型性格。通常不表现出护卫犬强烈的领地占有欲，不对陌生人过多的怀疑，也不会攻击其他犬类。因此有很多人喜欢哈士奇。他对主人非常忠诚，一条忠诚的小狗有一个健康的身体是非常重要的。",
-    "feedPoints":"　　哈士奇有着敏感的肠胃，因此在饮食上需要主人多加重视，喂食不当很容易",
-    "coverURL":"http://img.boqiicdn.com/Data/BK/P/imagick14371435571930.png"
-  };
+  "trust": 91,
+  "pettype": 1,
+  "name": "威尔士柯基犬",
+  "engName": "Welsh Corgi",
+  "characters": "充满活力、友好、勇敢大胆",
+  "nation": "英国",
+  "easyOfDisease": "肥胖症、渐进性视网膜萎缩、癫痫、椎间盘疾病",
+  "life": "12-15年",
+  "price": "",
+  "desc": "威尔士柯基全又称之为威尔士短腿狗，是时下很受欢迎的一个犬种，由于身长腿短长相很萌尤其受到了女生们的喜爱。威尔士柯基至少公元920年彭布罗克威尔士柯基犬已存在于英国了。",
+  "feature": "威尔士柯基犬又分为两种，卡迪根威尔士柯基犬和彭布罗克威尔士柯基犬，而且这两个种类还是有一定",
+  "characterFeature": "柯基的身材虽然矮小，但是它的力气很大而且很有活力，让人觉得很结实，性格温和，很",
+  "careKnowledge": "威尔士柯基的养护是相对比较容易的，被毛不需要特别的保养，也不用特别的美容，只需将它的“围脖”修饰好即可，对于人或者",
+  "feedPoints": "虽然说威尔士柯基是比较好养，但平时在饮食方面还是有很多需要注意的。牛奶，除较大的猪骨以外的骨头都不要给它吃，可以适当的给它吃一些",
+  "url": "http://www.boqii.com/entry/detail/449.html",
+  "coverURL": "http://img.boqiicdn.com/Data/BK/P/img421406278489.jpg"
+}
   private value: string = '';
   mounted() {
     this.getPetInfo('波斯猫');
