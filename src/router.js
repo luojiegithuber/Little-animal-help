@@ -4,6 +4,8 @@ import Home from "@/views/Home.vue";
 import Another from "@/views/another/Another.vue";
 import Stray from "@/views/stray/index.vue";
 import PetDetail from "@/views/PetDetail.vue";
+import RecommendResult from "@/views/RecommendResult.vue";
+
 import Main from "@/views/Main.vue";
 Vue.use(Router);
 
@@ -36,6 +38,14 @@ export default new Router({
       component: PetDetail,
       meta: {
         title: "详情页",
+      },
+    },
+    {
+      path: "/resultlist",
+      name: "resultlist",
+      component: RecommendResult,
+      meta: {
+        title: "搜索结果",
       },
     },
     {

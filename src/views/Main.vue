@@ -87,6 +87,7 @@ export default class extends Vue {
     console.log('文件',file)
     const response = await fetchPetImgInfo(file.content)
     console.log(response.newslist)
+    this.$router.push({path:'/resultlist',query: {resultList:JSON.stringify(response.newslist)}})
   }
 
 

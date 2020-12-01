@@ -1,6 +1,6 @@
 <template>
     <div class="result-detail">
-        <div class="cover-pic" :style="{backgroundImage:'url(http://img.boqiicdn.com/Data/BK/P/imagick14371435571930.png)'}">
+        <div class="cover-pic" :style="{backgroundImage:'url('+infoCollapse.coverURL+')'}">
             <div class="scenic-preview">
                 <div class="scenic-title">{{infoCollapse.name}}</div>
             </div>
@@ -53,31 +53,16 @@ export default class DeTail extends Vue {
     }
 
 
-  private infoCollapse: any = {
-  "trust": 91,
-  "pettype": 1,
-  "name": "威尔士柯基犬",
-  "engName": "Welsh Corgi",
-  "characters": "充满活力、友好、勇敢大胆",
-  "nation": "英国",
-  "easyOfDisease": "肥胖症、渐进性视网膜萎缩、癫痫、椎间盘疾病",
-  "life": "12-15年",
-  "price": "",
-  "desc": "威尔士柯基全又称之为威尔士短腿狗，是时下很受欢迎的一个犬种，由于身长腿短长相很萌尤其受到了女生们的喜爱。威尔士柯基至少公元920年彭布罗克威尔士柯基犬已存在于英国了。",
-  "feature": "威尔士柯基犬又分为两种，卡迪根威尔士柯基犬和彭布罗克威尔士柯基犬，而且这两个种类还是有一定",
-  "characterFeature": "柯基的身材虽然矮小，但是它的力气很大而且很有活力，让人觉得很结实，性格温和，很",
-  "careKnowledge": "威尔士柯基的养护是相对比较容易的，被毛不需要特别的保养，也不用特别的美容，只需将它的“围脖”修饰好即可，对于人或者",
-  "feedPoints": "虽然说威尔士柯基是比较好养，但平时在饮食方面还是有很多需要注意的。牛奶，除较大的猪骨以外的骨头都不要给它吃，可以适当的给它吃一些",
-  "url": "http://www.boqii.com/entry/detail/449.html",
-  "coverURL": "http://img.boqiicdn.com/Data/BK/P/img421406278489.jpg"
-}
+  private infoCollapse: any = {}
   private value: string = '';
-  mounted() {
-    this.getPetInfo('波斯猫');
+  created() {
+    /*this.getPetInfo('波斯猫'); */
+    this.infoCollapse = JSON.parse(this.$route.query.data as string);
+    console.log('详情页',this.infoCollapse)
   }
 
   public async getPetInfo(name: string) {
-    const res: any = await fetchPetInfo('波斯猫');
+/*     const res: any = await fetchPetInfo('波斯猫'); */
   }
 
   onSearch(content){
@@ -99,7 +84,7 @@ export default class DeTail extends Vue {
 }
 
 .cover-pic {
-    width: 100vw;
+    width: 90vw;
     height: 35vh; 
     /*background-image: url("http://pic4.40017.cn/scenery/comment/2016/09/17/12/dJd7DH.jpg");*/
     background-repeat: no-repeat;
@@ -108,7 +93,7 @@ export default class DeTail extends Vue {
 }
 
 .scenic-preview{
-    width: 100vw;
+    width: 90vw;
     height: 20vw;
     background-color: rgba(0, 0, 0, 0.5);
 
